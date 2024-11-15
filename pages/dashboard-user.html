@@ -7,9 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
+<body class="text-white">
     <header>
-        <div class="sidebar-app" id="sidebar">
+        <div class="sidebar-app text-light" id="sidebar">
             <nav>
                 <ul>
                     <li class="menu-container-app">
@@ -22,19 +22,13 @@
                     <li>
                         <a href="#">
                             <img src="/assets/icon/home-icon.svg" alt="">
-                            <span>Home</span>
+                            <span class="">Home</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
                             <img src="/assets/icon/project-add-icon.svg" alt="">
                             <span>New Project</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/assets/icon/list-icon.svg" alt="">
-                            <span>List Project</span>
                         </a>
                     </li>
                 </ul>
@@ -45,20 +39,20 @@
         <div class="container-fluid">
             <div class="row align-items-center">
               <div class="col-md-6 d-flex align-items-center">
-                <div class="profile-icon me-3">
+                <div class="profile-icon">
                     <img src="/assets/img/profile-img.png" alt="" class="rounded-circle profile-img">
                 </div>
                 <div>
                     <div class="h5 mb-1">
-                        Javier Ballon
+                        USER01
                     </div>
-                    <div class="text-muted">
-                        Full Stack Developer
+                    <div>
+                        Senior Engineer
                     </div>
                 </div>
               </div>
               <div class="col-md-6 text-md-end">
-                <div class="h5 mb-1 text-muted">Last Connection</div>
+                <div class="h5 mb-1">Last Connection</div>
               </div>
             </div>
         </div>
@@ -66,7 +60,7 @@
             <div class="row align-items-center">
                 <div class="col-md-12 d-flex align-items-center">
                     <div class="h5 mb-1">
-                        Show last 5 projects
+                        Show all projects
                     </div>
                 </div>
             </div>
@@ -74,7 +68,7 @@
         <div class="container-fluid py-5">
             <div class="row align-items-center">
                 <div class="col-12">
-                    <table class="table mx-auto">
+                    <table class="table table-dark mx-auto bg-black">
                         <thead>
                           <tr>
                             <th scope="col">#</th>
@@ -87,7 +81,14 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <th scope="row">1</th>
+                            <th scope="row">
+                                <div id="menuButton" class="text-primary focus-none text-decoration-none">
+                                    1
+                                </div>
+                                <div id="menu-user" class="menu-user hidden">
+                                    <button class="menu-item" onclick="editProject()">Edit</button>
+                                </div>
+                            </th>
                             <td>Proyecto A</td>
                             <td>Revisión inicial</td>
                             <td>2024-01-01</td>
@@ -95,7 +96,7 @@
                             <td>Investigar, Planificar, Ejecutar</td>
                           </tr>
                           <tr>
-                            <th scope="row">2</th>
+                            <th scope="row" class="text-primary focus-none text-decoration-none">2</th>
                             <td>Proyecto B</td>
                             <td>Desarrollo del backend</td>
                             <td>2024-02-15</td>
@@ -103,7 +104,7 @@
                             <td>Diseñar, Codificar, Probar</td>   
                           </tr>
                           <tr>
-                            <th scope="row">3</th>
+                            <th scope="row" class="text-primary focus-none text-decoration-none">3</th>
                             <td>Proyecto C</td>
                             <td>Revisión final</td>
                             <td>2024-03-01</td>
@@ -111,7 +112,7 @@
                             <td>Revisar, Corregir, Entregar</td> 
                           </tr>
                           <tr>
-                            <th scope="row">4</th>
+                            <th scope="row" class="text-primary focus-none text-decoration-none">4</th>
                             <td>Proyecto D</td>
                             <td>Investigación de mercado</td>
                             <td>2024-04-01</td>
@@ -119,7 +120,7 @@
                             <td>Reunir datos, Analizar, Reportar</td>
                           </tr>
                           <tr>
-                            <th scope="row">5</th>
+                            <th scope="row" class="text-primary focus-none text-decoration-none">5</th>
                             <td>Proyecto E</td>
                             <td>Desarrollo del frontend</td>
                             <td>2024-05-10</td>
@@ -128,9 +129,6 @@
                           </tr>
                         </tbody>
                       </table>
-                </div>
-                <div class="col-md-12 text-md-end">
-                    <button type="button" class="btn btn-primary">See all projects</button>
                 </div>
             </div>
         </div>

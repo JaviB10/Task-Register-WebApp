@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="10" cy="6" r="4" stroke="#1C274C" stroke-width="1.5"/>
-<path d="M21 10H19M19 10H17M19 10L19 8M19 10L19 12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M17.9975 18C18 17.8358 18 17.669 18 17.5C18 15.0147 14.4183 13 10 13C5.58172 13 2 15.0147 2 17.5C2 19.9853 2 22 10 22C12.231 22 13.8398 21.8433 15 21.5634" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M333.333 333.333C406.971 333.333 466.667 273.638 466.667 200C466.667 126.362 406.971 66.6667 333.333 66.6667C259.695 66.6667 200 126.362 200 200C200 273.638 259.695 333.333 333.333 333.333Z" stroke="white" stroke-width="50"/>
+<path d="M700 333.333H633.333M633.333 333.333H566.667M633.333 333.333V266.667M633.333 333.333V400" stroke="white" stroke-width="50" stroke-linecap="round"/>
+<path d="M599.917 600C600 594.527 600 588.967 600 583.333C600 500.49 480.61 433.333 333.333 433.333C186.057 433.333 66.6667 500.49 66.6667 583.333C66.6667 666.177 66.6667 733.333 333.333 733.333C407.7 733.333 461.327 728.11 500 718.78" stroke="white" stroke-width="50" stroke-linecap="round"/>
 </svg>
