@@ -9,9 +9,9 @@
 </head>
 <body class="text-white">
     <header>
-        <div class="sidebar-app text-light" id="sidebar">
-            <nav>
-                <ul>
+        <div>
+            <nav class="sidebar-app text-light" id="sidebar">
+                <ul class="list-unstyled flex-grow-1">
                     <li class="menu-container-app">
                         <div class="menu-app" id="menu">
                             <div></div>
@@ -20,15 +20,21 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/pages/dashboard-user.html">
                             <img src="/assets/icon/home-icon.svg" alt="">
                             <span class="">Home</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" id="add-project" onclick="openForm()">
                             <img src="/assets/icon/project-add-icon.svg" alt="">
                             <span>New Project</span>
+                        </a>
+                    </li>
+                    <li class="mt-auto">
+                        <a href="#">
+                            <img src="/assets/icon/logout-icon.svg" alt="">
+                            <span>Logout</span>
                         </a>
                     </li>
                 </ul>
@@ -36,6 +42,62 @@
         </div>
     </header>
     <main id="main">
+        <div class="position-fixed top-0 start-0 end-0 bottom-0 bg-light bg-opacity-50 d-flex justify-content-center align-items-center z-index-1050 hidden-form" id="hidden-form-user">
+            <div class="bg-black p-4 rounded shadow-lg w-100" style="max-width: 32rem; position: relative;">
+                <form action="" method="post">
+                    <h4 class="text-center text-light fw-bold mb-4">ADD PROJECT</h4>
+                    <div>
+                        <label for="projectName"></label>
+                        <input type="text" class="form-control custom-input" id="projectName" placeholder="Project name">
+                    </div>
+                    <div>
+                        <label for="comments"></label>
+                        <textarea type="text" class="form-control custom-input" id="comments" placeholder="Comments"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="toDoList"></label>
+                        <textarea  class="form-control custom-input" id="toDoList" placeholder="To do list"></textarea>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="button" id="close-form" class="btn btn-danger me-2" onclick="closeForm()">Close</button>
+                        <button type="button" class="btn btn-success">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="position-fixed top-0 start-0 end-0 bottom-0 bg-light bg-opacity-50 d-flex justify-content-center align-items-center z-index-1050 hidden-form-update" id="hidden-form-update-user">
+            <div class="bg-black p-4 rounded shadow-lg w-100" style="max-width: 32rem; position: relative;">
+                <form action="" method="post">
+                    <h4 class="text-center text-light fw-bold mb-4">UPDATE PROJECT</h4>
+                    <div>
+                        <label for="projectName"></label>
+                        <input type="text" class="form-control custom-input" id="projectName" placeholder="Project name">
+                    </div>
+                    <div>
+                        <label for="comments"></label>
+                        <textarea type="text" class="form-control custom-input" id="comments" placeholder="Comments"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="toDoList"></label>
+                        <textarea  class="form-control custom-input" id="toDoList" placeholder="To do list"></textarea>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="button" id="close-form" class="btn btn-danger me-2" onclick="closeFormUpdate()">Close</button>
+                        <button type="button" class="btn btn-success">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="position-fixed top-0 start-0 end-0 bottom-0 bg-light bg-opacity-50 d-flex justify-content-center align-items-center z-index-1050 hidden-delete" id="hidden-delete-user">
+            <div class="bg-black p-4 rounded-4 shadow-lg w-100" style="max-width: 32rem; position: relative;">
+                <h4 class="text-center text-light fw-bold mb-4">DELETE PROJECT</h4>
+                <p class="text-center">¿Estás seguro de que deseas eliminar este proyecto?</p>
+                <div class="d-flex justify-content-end">
+                    <button type="button" id="close-form" class="btn btn-danger me-2" style="width: 90px;">SI</button>
+                    <button type="button" class="btn btn-success" style="width: 90px;" onclick="closeDelete()">NO</button>
+                </div>
+            </div>
+        </div>
         <div class="container-fluid">
             <div class="row align-items-center">
               <div class="col-md-6 d-flex align-items-center">
@@ -81,14 +143,15 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <th scope="row">
-                                <div id="menuButton" class="text-primary focus-none text-decoration-none">
+                            <td>
+                                <a href="#" class="text-primary fw-bold text-decoration-none" data-menu="1" onclick="toggleMenu(event, 1)">
                                     1
+                                </a>
+                                <div class="menu-user position-absolute mt-2 border border-light bg-black text-light hidden-menu-user" style="width: 12rem; z-index: 1050;" data-menu="1">
+                                    <button class="btn btn-link menu-item text-decoration-none text-white d-flex" onclick="editProject(1)">Edit</button>
+                                    <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteProject(1)">Delete</button>
                                 </div>
-                                <div id="menu-user" class="menu-user hidden">
-                                    <button class="menu-item" onclick="editProject()">Edit</button>
-                                </div>
-                            </th>
+                            </td>
                             <td>Proyecto A</td>
                             <td>Revisión inicial</td>
                             <td>2024-01-01</td>
@@ -96,7 +159,15 @@
                             <td>Investigar, Planificar, Ejecutar</td>
                           </tr>
                           <tr>
-                            <th scope="row" class="text-primary focus-none text-decoration-none">2</th>
+                            <td>
+                                <a href="#" class="text-primary fw-bold text-decoration-none" data-menu="2" onclick="toggleMenu(event, 2)">
+                                    2
+                                </a>
+                                <div class="menu-user position-absolute mt-2 border border-light bg-black text-light hidden-menu-user" style="width: 12rem; z-index: 1050;" data-menu="2">
+                                    <button class="btn btn-link menu-item text-decoration-none text-white d-flex" onclick="editProject(2)">Edit</button>
+                                    <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteProject(2)">Delete</button>
+                                </div>
+                            </td>
                             <td>Proyecto B</td>
                             <td>Desarrollo del backend</td>
                             <td>2024-02-15</td>
@@ -104,7 +175,15 @@
                             <td>Diseñar, Codificar, Probar</td>   
                           </tr>
                           <tr>
-                            <th scope="row" class="text-primary focus-none text-decoration-none">3</th>
+                            <td>
+                                <a href="#" class="text-primary fw-bold text-decoration-none" data-menu="3" onclick="toggleMenu(event, 3)">
+                                    3
+                                </a>
+                                <div class="menu-user position-absolute mt-2 border border-light bg-black text-light hidden-menu-user" style="width: 12rem; z-index: 1050;" data-menu="3">
+                                    <button class="btn btn-link menu-item text-decoration-none text-white d-flex" onclick="editProject(3)">Edit</button>
+                                    <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteProject(3)">Delete</button>
+                                </div>
+                            </td>
                             <td>Proyecto C</td>
                             <td>Revisión final</td>
                             <td>2024-03-01</td>
@@ -112,7 +191,15 @@
                             <td>Revisar, Corregir, Entregar</td> 
                           </tr>
                           <tr>
-                            <th scope="row" class="text-primary focus-none text-decoration-none">4</th>
+                            <td>
+                                <a href="#" class="text-primary fw-bold text-decoration-none" data-menu="4" onclick="toggleMenu(event, 4)">
+                                    4
+                                </a>
+                                <div class="menu-user position-absolute mt-2 border border-light bg-black text-light hidden-menu-user" style="width: 12rem; z-index: 1050;" data-menu="4">
+                                    <button class="btn btn-link menu-item text-decoration-none text-white d-flex" onclick="editProject(4)">Edit</button>
+                                    <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteProject(4)">Delete</button>
+                                </div>
+                            </td>
                             <td>Proyecto D</td>
                             <td>Investigación de mercado</td>
                             <td>2024-04-01</td>
@@ -120,7 +207,15 @@
                             <td>Reunir datos, Analizar, Reportar</td>
                           </tr>
                           <tr>
-                            <th scope="row" class="text-primary focus-none text-decoration-none">5</th>
+                            <td>
+                                <a href="#" class="text-primary fw-bold text-decoration-none" data-menu="5" onclick="toggleMenu(event, 5)">
+                                    5
+                                </a>
+                                <div class="menu-user position-absolute mt-2 border border-light bg-black text-light hidden-menu-user" style="width: 12rem; z-index: 1050;" data-menu="5">
+                                    <button class="btn btn-link menu-item text-decoration-none text-white d-flex" onclick="editProject(5)">Edit</button>
+                                    <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteProject(5)">Delete</button>
+                                </div>
+                            </td>
                             <td>Proyecto E</td>
                             <td>Desarrollo del frontend</td>
                             <td>2024-05-10</td>
@@ -133,7 +228,8 @@
             </div>
         </div>
     </main>
-    <script src="/script.js"></script>
+    <script src="/script/script-sidebar.js"></script>
+    <script src="/script/script-dashboard-user.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
