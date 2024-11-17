@@ -37,6 +37,12 @@
                             <span>List Users</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="/pages/dashboard-assigned-projects-admin.html" id="list-users">
+                            <img src="/assets/icon/user-assigned-icon.svg" alt="">
+                            <span>Assigned projects</span>
+                        </a>
+                    </li>
                     <li class="mt-auto">
                         <a href="#">
                             <img src="/assets/icon/logout-icon.svg" alt="">
@@ -82,13 +88,50 @@
                         <label for="comments"></label>
                         <textarea type="text" class="form-control custom-input" id="comments" placeholder="Comments"></textarea>
                     </div>
-                    <div class="mb-3">
+                    <div>
                         <label for="toDoList"></label>
                         <textarea  class="form-control custom-input" id="toDoList" placeholder="To do list"></textarea>
                     </div>
+                    <div>
+                        <label for="workedHours"></label>
+                        <input type="number" class="form-control custom-input" id="workedHours" placeholder="Worked hours">
+                    </div>
+                    <div class="mb-3">
+                        <label for="completed"></label>
+                        <select id="completed" name="completed" class="form-select custom-input">
+                            <option value="0">To collaborate with?</option>
+                            <option value="user1">USER01</option>
+                            <option value="user2">USER02</option>
+                            <option value="user3">USER03</option>
+                            <option value="user4">USER04</option>
+                            <option value="user5">USER05</option>
+                        </select>
+                    </div>
                     <div class="d-flex justify-content-end">
                         <button type="button" id="close-form" class="btn btn-danger me-2" onclick="closeForm()">Close</button>
-                        <button type="button" class="btn btn-success">Create</button>
+                        <button type="submit" class="btn btn-success">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="position-fixed top-0 start-0 end-0 bottom-0 bg-light bg-opacity-50 d-flex justify-content-center align-items-center z-index-1050 hidden-form-assigned" id="hidden-form-assigned-admin">
+            <div class="bg-black p-4 rounded shadow-lg w-100" style="max-width: 32rem; position: relative;">
+                <form action="" method="post">
+                    <h4 class="text-center text-light fw-bold mb-4">ASSIGNED PROJECT</h4>
+                    <div class="mb-3">
+                        <label for="completed"></label>
+                        <select id="completed" name="completed" class="form-select custom-input" multiple>
+                            <option value="0">Assigned project?</option>
+                            <option value="user1">USER01</option>
+                            <option value="user2">USER02</option>
+                            <option value="user3">USER03</option>
+                            <option value="user4">USER04</option>
+                            <option value="user5">USER05</option>
+                        </select>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="button" id="close-form" class="btn btn-danger me-2" onclick="closeFormAssigned()">Close</button>
+                        <button type="submit" class="btn btn-success">Update</button>
                     </div>
                 </form>
             </div>
@@ -105,13 +148,36 @@
                         <label for="comments"></label>
                         <textarea type="text" class="form-control custom-input" id="comments" placeholder="Comments"></textarea>
                     </div>
-                    <div class="mb-3">
+                    <div>
                         <label for="toDoList"></label>
                         <textarea  class="form-control custom-input" id="toDoList" placeholder="To do list"></textarea>
                     </div>
+                    <div>
+                        <label for="workedHours"></label>
+                        <input type="number" class="form-control custom-input" id="workedHours" placeholder="Worked hours">
+                    </div>
+                    <div>
+                        <label for="completed"></label>
+                        <select id="completed" name="completed" class="form-select custom-input">
+                            <option value="" disabled selected hidden>Project finished?</option>
+                            <option value="yes">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="completed"></label>
+                        <select id="completed" name="completed" class="form-select custom-input">
+                            <option value="0">To collaborate with?</option>
+                            <option value="user1">USER01</option>
+                            <option value="user2">USER02</option>
+                            <option value="user3">USER03</option>
+                            <option value="user4">USER04</option>
+                            <option value="user5">USER05</option>
+                        </select>
+                    </div>
                     <div class="d-flex justify-content-end">
                         <button type="button" id="close-form" class="btn btn-danger me-2" onclick="closeFormUpdate()">Close</button>
-                        <button type="button" class="btn btn-success">Update</button>
+                        <button type="submit" class="btn btn-success">Update</button>
                     </div>
                 </form>
             </div>
@@ -151,6 +217,9 @@
                             <th scope="col">Comments</th>
                             <th scope="col">Start</th>
                             <th scope="col">Finish</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Collaborators</th>
+                            <th scope="col">Worked hours</th>
                             <th scope="col">To do list</th>
                           </tr>
                         </thead>
@@ -162,6 +231,7 @@
                                 </a>
                                 <div class="menu-admin position-absolute mt-2 border border-light rounded-4 bg-black text-light hidden-menu-admin" style="width: 12rem; z-index: 1050;" data-menu="1">
                                     <button class="btn btn-link menu-item text-decoration-none text-white d-flex" onclick="editProject(1)">Update project</button>
+                                    <button class="btn btn-link menu-item text-decoration-none text-white" onclick="assignedProject(1)">Assigned project</button>
                                     <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteProject(1)">Delete project</button>
                                 </div>
                             </td>
@@ -169,6 +239,9 @@
                             <td>Revisión inicial</td>
                             <td>2024-01-01</td>
                             <td>2024-03-01</td>
+                            <td>Finished</td>
+                            <td>USER03</td>
+                            <td>30 hours</td>
                             <td>Investigar, Planificar, Ejecutar</td>
                           </tr>
                           <tr>
@@ -178,14 +251,18 @@
                                 </a>
                                 <div class="menu-admin position-absolute mt-2 border border-light rounded-4 bg-black text-light hidden-menu-admin" style="width: 12rem; z-index: 1050;" data-menu="2">
                                     <button class="btn btn-link menu-item text-decoration-none text-white d-flex" onclick="editProject(2)">Update project</button>
+                                    <button class="btn btn-link menu-item text-decoration-none text-white" onclick="assignedProject(2)">Assigned project</button>
                                     <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteProject(2)">Delete project</button>
                                 </div>
                             </td>
                             <td>Proyecto B</td>
-                            <td>Desarrollo del backend</td>
+                            <td>Análisis de vulnerabilidades</td>
                             <td>2024-02-15</td>
                             <td>2024-06-01</td>
-                            <td>Diseñar, Codificar, Probar</td>   
+                            <td>Finished</td>
+                            <td></td>
+                            <td>120 hours</td>
+                            <td>Identificar, Solucionar, Probar</td>   
                           </tr>
                           <tr>
                             <td>
@@ -194,6 +271,7 @@
                                 </a>
                                 <div class="menu-admin position-absolute mt-2 border border-light rounded-4 bg-black text-light hidden-menu-admin" style="width: 12rem; z-index: 1050;" data-menu="3">
                                     <button class="btn btn-link menu-item text-decoration-none text-white d-flex" onclick="editProject(3)">Update project</button>
+                                    <button class="btn btn-link menu-item text-decoration-none text-white" onclick="assignedProject(3)">Assigned project</button>
                                     <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteProject(3)">Delete project</button>
                                 </div>
                             </td>
@@ -201,6 +279,9 @@
                             <td>Revisión final</td>
                             <td>2024-03-01</td>
                             <td>2024-04-30</td>
+                            <td>Finished</td>
+                            <td>USER02</td>
+                            <td>10 hours</td>
                             <td>Revisar, Corregir, Entregar</td> 
                           </tr>
                           <tr>
@@ -210,6 +291,7 @@
                                 </a>
                                 <div class="menu-admin position-absolute mt-2 border border-light rounded-4 bg-black text-light hidden-menu-admin" style="width: 12rem; z-index: 1050;" data-menu="4">
                                     <button class="btn btn-link menu-item text-decoration-none text-white d-flex" onclick="editProject(4)">Update project</button>
+                                    <button class="btn btn-link menu-item text-decoration-none text-white" onclick="assignedProject(4)">Assigned project</button>
                                     <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteProject(4)">Delete project</button>
                                 </div>
                             </td>
@@ -217,7 +299,10 @@
                             <td>Investigación de mercado</td>
                             <td>2024-04-01</td>
                             <td>2024-05-15</td>
-                            <td>Reunir datos, Analizar, Reportar</td>
+                            <td>In progress</td>
+                            <td></td>
+                            <td>0 hours</td>
+                            <td>Identificar y clasificar amenazas</td>
                           </tr>
                           <tr>
                             <td>
@@ -226,14 +311,18 @@
                                 </a>
                                 <div class="menu-admin position-absolute mt-2 border border-light rounded-4 bg-black text-light hidden-menu-admin" style="width: 12rem; z-index: 1050;" data-menu="5">
                                     <button class="btn btn-link menu-item text-decoration-none text-white d-flex" onclick="editProject(5)">Update project</button>
+                                    <button class="btn btn-link menu-item text-decoration-none text-white" onclick="assignedProject(5)">Assigned project</button>
                                     <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteProject(5)">Delete project</button>
                                 </div>
                             </td>
                             <td>Proyecto E</td>
-                            <td>Desarrollo del frontend</td>
+                            <td>Auditoría de seguridad</td>
                             <td>2024-05-10</td>
                             <td>2024-07-20</td>
-                            <td>Diseñar, Codificar, Probar</td>
+                            <td>In progress</td>
+                            <td>USER04</td>
+                            <td>0 hours</td>
+                            <td>Planificar, Inspeccionar, Informe</td>
                           </tr>
                         </tbody>
                       </table>

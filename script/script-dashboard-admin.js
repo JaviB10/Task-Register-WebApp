@@ -3,6 +3,7 @@ const buttonAddProjectAdmin = document.getElementById('add-project-admin');
 const formAdmin = document.getElementById('hidden-form-admin');
 const buttonCloseForm = document.getElementById('close-form');
 const buttonUpdateProjectAdmin = document.getElementById('hidden-form-update-admin');
+const buttonAssignedProjectAdmin = document.getElementById('hidden-form-assigned-admin');
 const buttonDeleteProjectAdmin = document.getElementById('hidden-delete-admin');
 
 //Funcion para abrir el formulario y agregar un nuevo proyecto
@@ -41,6 +42,19 @@ const editProject = (menuID) => {
 
 const closeFormUpdate = () => {
     buttonUpdateProjectAdmin.classList.toggle('hidden-form-update'); //Alterna la visibilidad del formulario para actualizar el proyecto
+}
+
+const assignedProject = (menuID) => {
+    buttonAssignedProjectAdmin.classList.remove('hidden-form-assigned');
+
+    const menuAdmin = document.querySelector(`.menu-admin[data-menu="${menuID}"]`);
+    if (menuAdmin) {
+        menuAdmin.classList.add('hidden-menu-admin');
+    }
+}
+
+const closeFormAssigned = () => {
+    buttonAssignedProjectAdmin.classList.toggle('hidden-form-assigned'); //Alterna la visibilidad del formulario para actualizar el proyecto
 }
 
 //Muestra el modal para confirmar la eliminacion de un proyecto y cierra el menu del admin
