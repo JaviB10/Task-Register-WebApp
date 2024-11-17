@@ -46,7 +46,7 @@ body {
     transition: width 0.5s ease;
 }
 .sidebar-app.menu-toggle-app {
-    width: 13rem;
+    width: 14rem;
 }
 .sidebar-app ul {
     display: flex;
@@ -110,11 +110,10 @@ body {
 /**Estilos generales para el main */
 main {
     margin-left: 4rem;
-    padding: 0 2rem;
     transition: margin-left 0.5s ease;
 }
 main.menu-toggle-app {
-    margin-left: 13rem;
+    margin-left: 14rem;
 }
 
 /**Estilos para la seccion 1 del main, donde se muestran profile, full name, position y last connection */
@@ -145,7 +144,7 @@ main.menu-toggle-app {
 .custom-input {
     background-color: #D9D9D9 !important;
 }
-.custom-input:focus {
+.custom-input:focus, .custom-input:hover {
     outline: none !important;
     box-shadow: none !important;
     border: 0;
@@ -160,6 +159,9 @@ main.menu-toggle-app {
     display: none !important;
 }
 .hidden-form-update {
+    display: none !important;
+}
+.hidden-form-assigned {
     display: none !important;
 }
 .hidden-delete {
