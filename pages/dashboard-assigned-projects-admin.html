@@ -25,7 +25,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" id="list-users">
+                    <a href="/pages/dashboard-list-users-admin.html" id="list-users">
                         <img src="/assets/icon/project-add-icon.svg" alt="">
                         <span>List Users</span>
                     </a>
@@ -40,27 +40,6 @@
         </nav>
     </header>
     <main id="main">
-
-        <div class="container-fluid">
-            <div class="row align-items-center">
-              <div class="col-md-6 d-flex align-items-center">
-                <div class="profile-icon">
-                    <img src="/assets/img/profile-img.png" alt="" class="rounded-circle profile-img">
-                </div>
-                <div>
-                    <div class="h5 mb-1">
-                        ADMIN01
-                    </div>
-                    <div>
-                        MANAGER
-                    </div>
-                </div>
-              </div>
-              <div class="col-md-6 text-md-end">
-                <div class="h5 mb-1">Last Connection</div>
-              </div>
-            </div>
-        </div>
 
         <div class="position-fixed top-0 start-0 end-0 bottom-0 bg-light bg-opacity-50 d-flex justify-content-center align-items-center z-index-1050 hidden-form-update" id="hidden-form-update-admin">
             <div class="bg-black p-4 rounded shadow-lg w-100" style="max-width: 32rem; position: relative;">
@@ -96,6 +75,7 @@
                 </form>
             </div>
         </div>
+
         <div class="position-fixed top-0 start-0 end-0 bottom-0 bg-light bg-opacity-50 d-flex justify-content-center align-items-center z-index-1050 hidden-delete" id="hidden-delete-admin">
             <div class="bg-black p-4 rounded-4 shadow-lg w-100" style="max-width: 32rem; position: relative;">
                 <h4 class="text-center text-light fw-bold mb-4">DELETE PROJECT</h4>
@@ -107,6 +87,27 @@
             </div>
         </div>
 
+        <div class="container-fluid">
+            <div class="row align-items-center">
+              <div class="col-md-6 d-flex align-items-center">
+                <div class="profile-icon">
+                    <img src="/assets/img/profile-img.png" alt="" class="rounded-circle profile-img">
+                </div>
+                <div>
+                    <div class="h5 mb-1">
+                        ADMIN01
+                    </div>
+                    <div>
+                        MANAGER
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-6 text-md-end">
+                <div class="h5 mb-1">Last Connection</div>
+              </div>
+            </div>
+        </div>
+
         <div class="container-fluid pt-5">
             <div class="row align-items-center">
                 <div class="col-md-6 d-flex align-items-center">
@@ -115,7 +116,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <button type="button" class="btn btn-primary">Export</button>
+                    <button type="button" class="btn btn-outline-info">Export</button>
                 </div>
             </div>
         </div>
@@ -153,7 +154,7 @@
                             <td>2024-01-01</td>
                             <td>2024-03-01</td>
                             <td>Finished</td>
-                            <td>USER03</td>
+                            <td>USER01 - USER03</td>
                             <td>30 hours</td>
                             <td>Investigar, Planificar, Ejecutar</td>
                           </tr>
@@ -172,7 +173,7 @@
                             <td>2024-02-15</td>
                             <td>2024-06-01</td>
                             <td>Finished</td>
-                            <td></td>
+                            <td>USER01</td>
                             <td>120 hours</td>
                             <td>Identificar, Solucionar, Probar</td>   
                           </tr>
@@ -191,7 +192,7 @@
                             <td>2024-03-01</td>
                             <td>2024-04-30</td>
                             <td>Finished</td>
-                            <td>USER02</td>
+                            <td>USER01 - USER02 - USER04</td>
                             <td>10 hours</td>
                             <td>Revisar, Corregir, Entregar</td> 
                           </tr>
@@ -208,9 +209,9 @@
                             <td>Proyecto D</td>
                             <td>Investigación de mercado</td>
                             <td>2024-04-01</td>
-                            <td>2024-05-15</td>
-                            <td>In progress</td>
                             <td></td>
+                            <td>In progress</td>
+                            <td>USER01</td>
                             <td>0 hours</td>
                             <td>Identificar y clasificar amenazas</td>
                           </tr>
@@ -227,9 +228,9 @@
                             <td>Proyecto E</td>
                             <td>Auditoría de seguridad</td>
                             <td>2024-05-10</td>
-                            <td>2024-07-20</td>
+                            <td></td>
                             <td>In progress</td>
-                            <td>USER04</td>
+                            <td>USER01 - USER02 - USER 5</td>
                             <td>0 hours</td>
                             <td>Planificar, Inspeccionar, Informe</td>
                           </tr>
