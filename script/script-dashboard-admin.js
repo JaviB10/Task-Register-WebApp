@@ -5,6 +5,7 @@ const buttonCloseForm = document.getElementById('close-form');
 const buttonUpdateProjectAdmin = document.getElementById('hidden-form-update-admin');
 const buttonAssignedProjectAdmin = document.getElementById('hidden-form-assigned-admin');
 const buttonDeleteProjectAdmin = document.getElementById('hidden-delete-admin');
+const buttonCreateProjectAmdmin = document.getElementById('create-project');
 
 //Funcion para abrir el formulario y agregar un nuevo proyecto
 const openForm = () => {
@@ -70,3 +71,35 @@ const deleteProject = (menuID) => {
 const closeDelete = () => {
     buttonDeleteProjectAdmin.classList.toggle('hidden-delete'); //Alterna la visibilidad del formulario para actualizar el proyecto
 }
+
+const createProject = (event) => {
+    buttonCreateProjectAmdmin.addEventListener('click', () => {
+        event.preventDefault();
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            },
+            didClose: () => {
+                // Recargar la página
+                location.reload();
+            }
+          });
+          Toast.fire({
+            icon: "success",
+            title: "Project created successfully"
+          });
+    })
+
+    closeForm();
+}
+
+// Llamar a createProject cuando se cargue la página
+window.addEventListener('DOMContentLoaded', () => {
+    createProject();
+});
