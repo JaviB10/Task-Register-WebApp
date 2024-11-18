@@ -127,8 +127,8 @@ main.menu-toggle-app {
     height: 15rem;
 }
 .profile-img-user {
-    width: 5rem;
-    height: 5rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border: 1px solid var(--border-color);
 }
 
@@ -165,5 +165,8 @@ main.menu-toggle-app {
     display: none !important;
 }
 .hidden-delete {
+    display: none !important;
+}
+.hidden-new-user {
     display: none !important;
 }
