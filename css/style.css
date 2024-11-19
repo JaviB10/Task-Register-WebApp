@@ -129,7 +129,10 @@ main.menu-toggle-app {
 .profile-img-user {
     width: 3.5rem;
     height: 3.5rem;
-    border: 1px solid var(--border-color);
+}
+.profile-img-user-details {
+    width: 6rem;
+    height: 6rem;
 }
 
 /**Estilos de la seccion 2 del main, donde se muestra la tabla con la informacion de los proyectos del admin */
