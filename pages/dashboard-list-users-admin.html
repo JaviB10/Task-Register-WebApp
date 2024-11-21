@@ -154,7 +154,7 @@
                     <table class="table table-dark mx-auto align-middle">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col"></th>
                                 <th scope="col"></th>
                                 <th scope="col">Full name</th>
                                 <th scope="col">Position</th>
@@ -164,14 +164,13 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <a href="" class="text-primary fw-bold text-decoration-none" data-menu="1" onclick="toggleMenu(event, 1)">
-                                        1
+                                    <a href="#" class="text-primary fw-bold text-decoration-none" data-menu="1" onclick="toggleMenu(event, 1)">
+                                        <img src="/assets/icon/menu-icon.svg" alt="">
                                     </a>
-                                    <div class="menu-user position-absolute mt-4 border border-light rounded-4 bg-black text-light hidden-menu-user" style="width: 12rem; z-index: 1050;" data-menu="1">
-                                        
-                                        <button class="btn btn-link menu-item text-decoration-none text-white d-flex"><a href="/pages/dashboard-view-user-profile-admin.html" class="text-white text-decoration-none">View projects</a></button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-white" onclick="editUser(1)">Update user</button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteUser(1)">Delete user</button>
+                                    <div class="menu-admin position-absolute mt-2 py-2 border border-light bg-black text-light hidden-menu-admin d-flex" style="width: auto;" data-menu="1">
+                                        <a href="/pages/dashboard-view-user-profile-admin.html"><img src="/assets/icon/search-icon.svg" alt="" class="mx-2"></a>
+                                        <img src="/assets/icon/update-icon.svg" alt="" class="cursor-pointer" onclick="editUser(1)">
+                                        <img src="/assets/icon/delete-icon.svg" alt="" class="cursor-pointer mx-2" onclick="deleteUser(1)">
                                     </div>
                                 </td>
                                 <td>
@@ -183,13 +182,13 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="" class="text-primary fw-bold text-decoration-none" data-menu="2" onclick="toggleMenu(event, 2)">
-                                        2
+                                    <a href="#" class="text-primary fw-bold text-decoration-none" data-menu="2" onclick="toggleMenu(event, 2)">
+                                        <img src="/assets/icon/menu-icon.svg" alt="">
                                     </a>
-                                    <div class="menu-user position-absolute mt-4 border border-light rounded-4 bg-black text-light hidden-menu-user" style="width: 12rem; z-index: 1050;" data-menu="2">
-                                        <button class="btn btn-link menu-item text-decoration-none text-white d-flex"><a href="/pages/dashboard-view-user-profile-admin.html" class="text-white text-decoration-none">View projects</a></button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-white" onclick="editUser(2)">Update user</button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteUser(2)">Delete user</button>
+                                    <div class="menu-admin position-absolute mt-2 py-2 border border-light bg-black text-light hidden-menu-admin d-flex" style="width: auto;" data-menu="2">
+                                        <a href="/pages/dashboard-view-user-profile-admin.html"><img src="/assets/icon/search-icon.svg" alt="" class="mx-2"></a>
+                                        <img src="/assets/icon/update-icon.svg" alt="" class="cursor-pointer" onclick="editUser(2)">
+                                        <img src="/assets/icon/delete-icon.svg" alt="" class="cursor-pointer mx-2" onclick="deleteUser(2)">
                                     </div>
                                 </td>
                                 <td>
@@ -201,13 +200,13 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="" class="text-primary fw-bold text-decoration-none" data-menu="3" onclick="toggleMenu(event, 3)">
-                                        3
+                                    <a href="#" class="text-primary fw-bold text-decoration-none" data-menu="3" onclick="toggleMenu(event, 3)">
+                                        <img src="/assets/icon/menu-icon.svg" alt="">
                                     </a>
-                                    <div class="menu-user position-absolute mt-4 border border-light rounded-4 bg-black text-light hidden-menu-user" style="width: 12rem; z-index: 1050;" data-menu="3">
-                                        <button class="btn btn-link menu-item text-decoration-none text-white d-flex"><a href="/pages/dashboard-view-user-profile-admin.html" class="text-white text-decoration-none">View projects</a></button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-white" onclick="editUser(3)">Update user</button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteUser(3)">Delete user</button>
+                                    <div class="menu-admin position-absolute mt-2 py-2 border border-light bg-black text-light hidden-menu-admin d-flex" style="width: auto;" data-menu="3">
+                                        <a href="/pages/dashboard-view-user-profile-admin.html"><img src="/assets/icon/search-icon.svg" alt="" class="mx-2"></a>
+                                        <img src="/assets/icon/update-icon.svg" alt="" class="cursor-pointer" onclick="editUser(3)">
+                                        <img src="/assets/icon/delete-icon.svg" alt="" class="cursor-pointer mx-2" onclick="deleteUser(3)">
                                     </div>
                                 </td>
                                 <td>
@@ -219,13 +218,13 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="" class="text-primary fw-bold text-decoration-none" data-menu="4" onclick="toggleMenu(event, 4)">
-                                        4
+                                    <a href="#" class="text-primary fw-bold text-decoration-none" data-menu="4" onclick="toggleMenu(event, 4)">
+                                        <img src="/assets/icon/menu-icon.svg" alt="">
                                     </a>
-                                    <div class="menu-user position-absolute mt-4 border border-light rounded-4 bg-black text-light hidden-menu-user" style="width: 12rem; z-index: 1050;" data-menu="4">
-                                        <button class="btn btn-link menu-item text-decoration-none text-white d-flex"><a href="/pages/dashboard-view-user-profile-admin.html" class="text-white text-decoration-none">View projects</a></button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-white" onclick="editUser(4)">Update user</button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteUser(4)">Delete user</button>
+                                    <div class="menu-admin position-absolute mt-2 py-2 border border-light bg-black text-light hidden-menu-admin d-flex" style="width: auto;" data-menu="4">
+                                        <a href="/pages/dashboard-view-user-profile-admin.html"><img src="/assets/icon/search-icon.svg" alt="" class="mx-2"></a>
+                                        <img src="/assets/icon/update-icon.svg" alt="" class="cursor-pointer" onclick="editUser(4)">
+                                        <img src="/assets/icon/delete-icon.svg" alt="" class="cursor-pointer mx-2" onclick="deleteUser(4)">
                                     </div>
                                 </td>
                                 <td>
@@ -237,13 +236,13 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="" class="text-primary fw-bold text-decoration-none" data-menu="5" onclick="toggleMenu(event, 5)">
-                                        5
+                                    <a href="#" class="text-primary fw-bold text-decoration-none" data-menu="5" onclick="toggleMenu(event, 5)">
+                                        <img src="/assets/icon/menu-icon.svg" alt="">
                                     </a>
-                                    <div class="menu-user position-absolute mt-4 border border-light rounded-4 bg-black text-light hidden-menu-user" style="width: 12rem; z-index: 1050;" data-menu="5">
-                                        <button class="btn btn-link menu-item text-decoration-none text-white d-flex"><a href="/pages/dashboard-view-user-profile-admin.html" class="text-white text-decoration-none">View projects</a></button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-white" onclick="editUser(5)">Update user</button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteUser(5)">Delete user</button>
+                                    <div class="menu-admin position-absolute mt-2 py-2 border border-light bg-black text-light hidden-menu-admin d-flex" style="width: auto;" data-menu="5">
+                                        <a href="/pages/dashboard-view-user-profile-admin.html"><img src="/assets/icon/search-icon.svg" alt="" class="mx-2"></a>
+                                        <img src="/assets/icon/update-icon.svg" alt="" class="cursor-pointer" onclick="editUser(5)">
+                                        <img src="/assets/icon/delete-icon.svg" alt="" class="cursor-pointer mx-2" onclick="deleteUser(5)">
                                     </div>
                                 </td>
                                 <td>

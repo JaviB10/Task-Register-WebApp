@@ -59,7 +59,7 @@
         <div class="position-fixed top-0 start-0 end-0 bottom-0 bg-light bg-opacity-50 d-flex justify-content-center align-items-center z-index-1050 hidden-form" id="hidden-form-admin">
             <div class="bg-black p-4 rounded shadow-lg w-100" style="max-width: 32rem; position: relative;">
                 <form action="" method="post">
-                    <h4 class="text-center text-light fw-bold mb-4">ADD PROJECT</h4>
+                    <h4 class="text-center text-light fw-bold mb-4">NEW PROJECT</h4>
                     <div>
                         <label for="projectName"></label>
                         <input type="text" class="form-control custom-input" id="projectName" placeholder="Project name">
@@ -213,29 +213,30 @@
         <div class="container-fluid py-5">
             <div class="row align-items-center">
                 <div class="col-12 table-responsive">
-                    <table class="table table-dark mx-auto bg-black text-center">
+                    <table class="table table-dark mx-auto bg-black">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col"></th>
                                 <th scope="col">Project name</th>
                                 <th scope="col">Comments</th>
                                 <th scope="col">Start</th>
                                 <th scope="col">Finish</th>
                                 <th scope="col">Status</th>
-                                <th scope="col">Collaborators</th>
+                                <th scope="col" class="text-center">Collaborators</th>
                                 <th scope="col">Worked hours</th>
+                                <th scope="col">To do list</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>
                                     <a href="#" class="text-primary fw-bold text-decoration-none" data-menu="1" onclick="toggleMenu(event, 1)">
-                                        1
+                                        <img src="/assets/icon/menu-icon.svg" alt="">
                                     </a>
-                                    <div class="menu-admin position-absolute mt-2 border border-light rounded-4 bg-black text-light hidden-menu-admin" style="width: 12rem; z-index: 1050;" data-menu="1">
-                                        <button class="btn btn-link menu-item text-decoration-none text-white d-flex" onclick="editProject(1)"><img src="/assets/icon/update-icon.svg" alt="" class="me-2">Update project</button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-white" onclick="assignedProject(1)">Assigned project</button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteProject(1)"><img src="/assets/icon/delete-icon.svg" alt="" class="me-2">Delete project</button>
+                                    <div class="menu-admin position-absolute mt-2 py-2 border border-light bg-black text-light hidden-menu-admin d-flex" style="width: auto;" data-menu="1">
+                                        <img src="/assets/icon/assigned-icon.svg" alt="" class="cursor-pointer mx-2" onclick="assignedProject(1)">
+                                        <img src="/assets/icon/update-icon.svg" alt="" class="cursor-pointer" onclick="editProject(1)">
+                                        <img src="/assets/icon/delete-icon.svg" alt="" class="cursor-pointer mx-2" onclick="deleteProject(1)">
                                     </div>
                                 </td>
                                 <td>Proyecto A</td>
@@ -243,34 +244,39 @@
                                 <td>2024-01-01</td>
                                 <td>2024-03-01</td>
                                 <td>Finished</td>
-                                <td>1</td>
+                                <td class="text-center">1</td>
                                 <td>30 hours</td>
+                                <td>Investigar, Planificar, Ejecutar</td>
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="#" class="text-decoration-none" data-menu="2" onclick="toggleMenu(event, 2)">
-                                        <img src="/assets/icon/update-icon.svg" alt="" onclick="editProject(2)">
-                                        <img src="/assets/icon/search-icon.svg" alt="" class="mx-auto">
-                                        <img src="/assets/icon/delete-icon.svg" alt="" onclick="deleteProject(2)">
+                                    <a href="#" class="text-primary fw-bold text-decoration-none" data-menu="2" onclick="toggleMenu(event, 2)">
+                                        <img src="/assets/icon/menu-icon.svg" alt="">
                                     </a>
+                                    <div class="menu-admin position-absolute mt-2 py-2 border border-light bg-black text-light hidden-menu-admin d-flex" style="width: auto;" data-menu="2">
+                                        <img src="/assets/icon/assigned-icon.svg" alt="" class="cursor-pointer mx-2" onclick="assignedProject(2)">
+                                        <img src="/assets/icon/update-icon.svg" alt="" class="cursor-pointer" onclick="editProject(2)">
+                                        <img src="/assets/icon/delete-icon.svg" alt="" class="cursor-pointer mx-2" onclick="deleteProject(2)">
+                                    </div>
                                 </td>
                                 <td>Proyecto B</td>
                                 <td>Análisis de vulnerabilidades</td>
                                 <td>2024-02-15</td>
                                 <td>2024-06-01</td>
                                 <td>Finished</td>
-                                <td>S/C</td>
+                                <td class="text-center">S/C</td>
                                 <td>120 hours</td>   
+                                <td>Identificar, Solucionar, Probar</td>   
                             </tr>
                             <tr>
                                 <td>
                                     <a href="#" class="text-primary fw-bold text-decoration-none" data-menu="3" onclick="toggleMenu(event, 3)">
-                                        3
+                                        <img src="/assets/icon/menu-icon.svg" alt="">
                                     </a>
-                                    <div class="menu-admin position-absolute mt-2 border border-light rounded-4 bg-black text-light hidden-menu-admin" style="width: 12rem; z-index: 1050;" data-menu="3">
-                                        <button class="btn btn-link menu-item text-decoration-none text-white d-flex" onclick="editProject(3)">Update project</button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-white" onclick="assignedProject(3)">Assigned project</button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteProject(3)">Delete project</button>
+                                    <div class="menu-admin position-absolute mt-2 py-2 border border-light bg-black text-light hidden-menu-admin d-flex" style="width: auto;" data-menu="3">
+                                        <img src="/assets/icon/assigned-icon.svg" alt="" class="cursor-pointer mx-2" onclick="assignedProject(3)">
+                                        <img src="/assets/icon/update-icon.svg" alt="" class="cursor-pointer" onclick="editProject(3)">
+                                        <img src="/assets/icon/delete-icon.svg" alt="" class="cursor-pointer mx-2" onclick="deleteProject(3)">
                                     </div>
                                 </td>
                                 <td>Proyecto C</td>
@@ -278,18 +284,19 @@
                                 <td>2024-03-01</td>
                                 <td>2024-04-30</td>
                                 <td>Finished</td>
-                                <td>1</td>
+                                <td class="text-center">1</td>
                                 <td>10 hours</td> 
+                                <td>Revisar, Corregir, Entregar</td> 
                             </tr>
                             <tr>
                                 <td>
                                     <a href="#" class="text-primary fw-bold text-decoration-none" data-menu="4" onclick="toggleMenu(event, 4)">
-                                        4
+                                        <img src="/assets/icon/menu-icon.svg" alt="">
                                     </a>
-                                    <div class="menu-admin position-absolute mt-2 border border-light rounded-4 bg-black text-light hidden-menu-admin" style="width: 12rem; z-index: 1050;" data-menu="4">
-                                        <button class="btn btn-link menu-item text-decoration-none text-white d-flex" onclick="editProject(4)">Update project</button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-white" onclick="assignedProject(4)">Assigned project</button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteProject(4)">Delete project</button>
+                                    <div class="menu-admin position-absolute mt-2 py-2 border border-light bg-black text-light hidden-menu-admin d-flex" style="width: auto;" data-menu="4">
+                                        <img src="/assets/icon/assigned-icon.svg" alt="" class="cursor-pointer mx-2" onclick="assignedProject(4)">
+                                        <img src="/assets/icon/update-icon.svg" alt="" class="cursor-pointer" onclick="editProject(4)">
+                                        <img src="/assets/icon/delete-icon.svg" alt="" class="cursor-pointer mx-2" onclick="deleteProject(4)">
                                     </div>
                                 </td>
                                 <td>Proyecto D</td>
@@ -297,18 +304,19 @@
                                 <td>2024-04-01</td>
                                 <td></td>
                                 <td>In progress</td>
-                                <td>0</td>
+                                <td class="text-center">0</td>
                                 <td>0 hours</td>
+                                <td>Identificar y clasificar amenazas</td>
                             </tr>
                             <tr>
                                 <td>
                                     <a href="#" class="text-primary fw-bold text-decoration-none" data-menu="5" onclick="toggleMenu(event, 5)">
-                                        5
+                                        <img src="/assets/icon/menu-icon.svg" alt="">
                                     </a>
-                                    <div class="menu-admin position-absolute mt-2 border border-light rounded-4 bg-black text-light hidden-menu-admin" style="width: 12rem; z-index: 1050;" data-menu="5">
-                                        <button class="btn btn-link menu-item text-decoration-none text-white d-flex" onclick="editProject(5)">Update project</button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-white" onclick="assignedProject(5)">Assigned project</button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteProject(5)">Delete project</button>
+                                    <div class="menu-admin position-absolute mt-2 py-2 border border-light bg-black text-light hidden-menu-admin d-flex" style="width: auto;" data-menu="5">
+                                        <img src="/assets/icon/assigned-icon.svg" alt="" class="cursor-pointer mx-2" onclick="assignedProject(5)">
+                                        <img src="/assets/icon/update-icon.svg" alt="" class="cursor-pointer" onclick="editProject(5)">
+                                        <img src="/assets/icon/delete-icon.svg" alt="" class="cursor-pointer mx-2" onclick="deleteProject(5)">
                                     </div>
                                 </td>
                                 <td>Proyecto E</td>
@@ -316,8 +324,9 @@
                                 <td>2024-05-10</td>
                                 <td></td>
                                 <td>In progress</td>
-                                <td>1</td>
+                                <td class="text-center">1</td>
                                 <td>0 hours</td>
+                                <td>Planificar, Inspeccionar, Informe</td>
                             </tr>
                         </tbody>
                       </table>
