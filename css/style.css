@@ -173,3 +173,7 @@ main.menu-toggle-app {
 .hidden-new-user {
     display: none !important;
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}
