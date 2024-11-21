@@ -17,15 +17,15 @@ const closeForm = () => {
 const toggleMenu = (event, menuID) => {
     event.preventDefault();
     
-    document.querySelectorAll('.menu-user').forEach(menu => {
+    document.querySelectorAll('.menu-admin').forEach(menu => {
         if (menu.dataset.menu !== menuID.toString()) {
-            menu.classList.add('hidden-menu-user');
+            menu.classList.add('hidden-menu-admin');
         }
     })
 
-    const menu = document.querySelector(`.menu-user[data-menu="${menuID}"]`);
+    const menu = document.querySelector(`.menu-admin[data-menu="${menuID}"]`);
     if (menu) {
-        menu.classList.toggle('hidden-menu-user')
+        menu.classList.toggle('hidden-menu-admin')
     }
 }
 
@@ -33,9 +33,9 @@ const toggleMenu = (event, menuID) => {
 const editUser = (menuID) => {  
     buttonUpdateUserAdmin.classList.remove('hidden-form-update');
 
-    const menuAdmin = document.querySelector(`.menu-user[data-menu="${menuID}"]`);
+    const menuAdmin = document.querySelector(`.menu-admin[data-menu="${menuID}"]`);
     if (menuAdmin) {
-        menuAdmin.classList.add('hidden-menu-user');
+        menuAdmin.classList.add('hidden-menu-admin');
     }
 } 
 
@@ -47,9 +47,9 @@ const closeFormUpdate = () => {
 const deleteUser = (menuID) => {
     buttonDeleteUserAdmin.classList.remove('hidden-delete');
 
-    const deleteModal = document.querySelector(`.menu-user[data-menu="${menuID}"]`);
+    const deleteModal = document.querySelector(`.menu-admin[data-menu="${menuID}"]`);
     if (deleteModal) {
-        deleteModal.classList.add('hidden-menu-user')
+        deleteModal.classList.add('hidden-menu-admin')
     }
 }
 
