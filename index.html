@@ -213,7 +213,7 @@
         <div class="container-fluid py-5">
             <div class="row align-items-center">
                 <div class="col-12 table-responsive">
-                    <table class="table table-dark mx-auto bg-black">
+                    <table class="table table-dark mx-auto bg-black text-center">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -224,7 +224,6 @@
                                 <th scope="col">Status</th>
                                 <th scope="col">Collaborators</th>
                                 <th scope="col">Worked hours</th>
-                                <th scope="col">To do list</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -234,9 +233,9 @@
                                         1
                                     </a>
                                     <div class="menu-admin position-absolute mt-2 border border-light rounded-4 bg-black text-light hidden-menu-admin" style="width: 12rem; z-index: 1050;" data-menu="1">
-                                        <button class="btn btn-link menu-item text-decoration-none text-white d-flex" onclick="editProject(1)">Update project</button>
+                                        <button class="btn btn-link menu-item text-decoration-none text-white d-flex" onclick="editProject(1)"><img src="/assets/icon/update-icon.svg" alt="" class="me-2">Update project</button>
                                         <button class="btn btn-link menu-item text-decoration-none text-white" onclick="assignedProject(1)">Assigned project</button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteProject(1)">Delete project</button>
+                                        <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteProject(1)"><img src="/assets/icon/delete-icon.svg" alt="" class="me-2">Delete project</button>
                                     </div>
                                 </td>
                                 <td>Proyecto A</td>
@@ -244,20 +243,16 @@
                                 <td>2024-01-01</td>
                                 <td>2024-03-01</td>
                                 <td>Finished</td>
-                                <td>USER03</td>
+                                <td>1</td>
                                 <td>30 hours</td>
-                                <td>Investigar, Planificar, Ejecutar</td>
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="#" class="text-primary fw-bold text-decoration-none" data-menu="2" onclick="toggleMenu(event, 2)">
-                                        2
+                                    <a href="#" class="text-decoration-none" data-menu="2" onclick="toggleMenu(event, 2)">
+                                        <img src="/assets/icon/update-icon.svg" alt="" onclick="editProject(2)">
+                                        <img src="/assets/icon/search-icon.svg" alt="" class="mx-auto">
+                                        <img src="/assets/icon/delete-icon.svg" alt="" onclick="deleteProject(2)">
                                     </a>
-                                    <div class="menu-admin position-absolute mt-2 border border-light rounded-4 bg-black text-light hidden-menu-admin" style="width: 12rem; z-index: 1050;" data-menu="2">
-                                        <button class="btn btn-link menu-item text-decoration-none text-white d-flex" onclick="editProject(2)">Update project</button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-white" onclick="assignedProject(2)">Assigned project</button>
-                                        <button class="btn btn-link menu-item text-decoration-none text-danger" onclick="deleteProject(2)">Delete project</button>
-                                    </div>
                                 </td>
                                 <td>Proyecto B</td>
                                 <td>Análisis de vulnerabilidades</td>
@@ -265,8 +260,7 @@
                                 <td>2024-06-01</td>
                                 <td>Finished</td>
                                 <td>S/C</td>
-                                <td>120 hours</td>
-                                <td>Identificar, Solucionar, Probar</td>   
+                                <td>120 hours</td>   
                             </tr>
                             <tr>
                                 <td>
@@ -284,9 +278,8 @@
                                 <td>2024-03-01</td>
                                 <td>2024-04-30</td>
                                 <td>Finished</td>
-                                <td>USER02</td>
-                                <td>10 hours</td>
-                                <td>Revisar, Corregir, Entregar</td> 
+                                <td>1</td>
+                                <td>10 hours</td> 
                             </tr>
                             <tr>
                                 <td>
@@ -304,9 +297,8 @@
                                 <td>2024-04-01</td>
                                 <td></td>
                                 <td>In progress</td>
-                                <td></td>
+                                <td>0</td>
                                 <td>0 hours</td>
-                                <td>Identificar y clasificar amenazas</td>
                             </tr>
                             <tr>
                                 <td>
@@ -324,9 +316,8 @@
                                 <td>2024-05-10</td>
                                 <td></td>
                                 <td>In progress</td>
-                                <td>USER04</td>
+                                <td>1</td>
                                 <td>0 hours</td>
-                                <td>Planificar, Inspeccionar, Informe</td>
                             </tr>
                         </tbody>
                       </table>
