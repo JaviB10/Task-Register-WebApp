@@ -93,6 +93,26 @@
             </div>
         </div>
 
+        <div class="position-fixed top-0 start-0 end-0 bottom-0 bg-light bg-opacity-50 d-flex justify-content-center align-items-center z-index-1050 hidden-detail" id="hidden-detail-proyect">
+            <div class="bg-black p-4 rounded-4 shadow-lg w-100" style="max-width: 32rem; position: relative;">
+                <div>
+                    <label for="projectName"></label>
+                    <input type="text" class="form-control custom-input" id="projectName" placeholder="Project name">
+                </div>
+                <div>
+                    <label for="workedHours"></label>
+                    <input type="number" class="form-control custom-input" id="workedHours" placeholder="Worked hours">
+                </div>
+                <div>
+                    <label for="comments"></label>
+                    <textarea type="text" class="form-control custom-input" id="comments" placeholder="Comments"></textarea>
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <button type="button" class="btn btn-danger" style="width: 90px;" onclick="closeDetail()">Close</button>
+                </div>
+            </div>
+        </div>
+
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-6 d-flex align-items-center">
@@ -152,7 +172,7 @@
                                         <img src="/assets/icon/menu-icon.svg" alt="">
                                     </a>
                                     <div class="menu-user position-absolute mt-2 py-2 border border-light bg-black text-light hidden-menu-user d-flex" style="width: auto;" data-menu="1">
-                                        <a href="/pages/dashboard-details-projects-admin.html" class="mx-2"><img src="/assets/icon/search-icon.svg" alt=""></a>
+                                        <img src="/assets/icon/search-icon.svg" alt="" class="cursor-pointer mx-2" onclick="viewDetails(1)">
                                         <img src="/assets/icon/update-icon.svg" alt="" class="cursor-pointer" onclick="editProject(1)">
                                         <img src="/assets/icon/delete-icon.svg" alt="" class="cursor-pointer mx-2" onclick="deleteProject(1)">
                                     </div>
@@ -171,7 +191,7 @@
                                         <img src="/assets/icon/menu-icon.svg" alt="">
                                     </a>
                                     <div class="menu-user position-absolute mt-2 py-2 border border-light bg-black text-light hidden-menu-user d-flex" style="width: auto;" data-menu="2">
-                                        <a href="/pages/dashboard-details-projects-admin.html" class="mx-2"><img src="/assets/icon/search-icon.svg" alt=""></a>
+                                        <img src="/assets/icon/search-icon.svg" alt="" class="cursor-pointer mx-2" onclick="viewDetails(2)">
                                         <img src="/assets/icon/update-icon.svg" alt="" class="cursor-pointer" onclick="editProject(2)">
                                         <img src="/assets/icon/delete-icon.svg" alt="" class="cursor-pointer mx-2" onclick="deleteProject(2)">
                                     </div>
@@ -190,7 +210,7 @@
                                         <img src="/assets/icon/menu-icon.svg" alt="">
                                     </a>
                                     <div class="menu-user position-absolute mt-2 py-2 border border-light bg-black text-light hidden-menu-user d-flex" style="width: auto;" data-menu="3">
-                                        <a href="/pages/dashboard-details-projects-admin.html" class="mx-2"><img src="/assets/icon/search-icon.svg" alt=""></a>
+                                        <img src="/assets/icon/search-icon.svg" alt="" class="cursor-pointer mx-2" onclick="viewDetails(3)">
                                         <img src="/assets/icon/update-icon.svg" alt="" class="cursor-pointer" onclick="editProject(3)">
                                         <img src="/assets/icon/delete-icon.svg" alt="" class="cursor-pointer mx-2" onclick="deleteProject(3)">
                                     </div>
@@ -209,7 +229,7 @@
                                         <img src="/assets/icon/menu-icon.svg" alt="">
                                     </a>
                                     <div class="menu-user position-absolute mt-2 py-2 border border-light bg-black text-light hidden-menu-user d-flex" style="width: auto;" data-menu="4">
-                                        <a href="/pages/dashboard-details-projects-admin.html" class="mx-2"><img src="/assets/icon/search-icon.svg" alt=""></a>
+                                        <img src="/assets/icon/search-icon.svg" alt="" class="cursor-pointer mx-2" onclick="viewDetails(4)">
                                         <img src="/assets/icon/update-icon.svg" alt="" class="cursor-pointer" onclick="editProject(4)">
                                         <img src="/assets/icon/delete-icon.svg" alt="" class="cursor-pointer mx-2" onclick="deleteProject(4)">
                                     </div>
@@ -228,7 +248,7 @@
                                         <img src="/assets/icon/menu-icon.svg" alt="">
                                     </a>
                                     <div class="menu-user position-absolute mt-2 py-2 border border-light bg-black text-light hidden-menu-user d-flex" style="width: auto;" data-menu="5">
-                                        <a href="/pages/dashboard-details-projects-admin.html" class="mx-2"><img src="/assets/icon/search-icon.svg" alt=""></a>
+                                        <img src="/assets/icon/search-icon.svg" alt="" class="cursor-pointer mx-2" onclick="viewDetails(5)">
                                         <img src="/assets/icon/update-icon.svg" alt="" class="cursor-pointer" onclick="editProject(5)">
                                         <img src="/assets/icon/delete-icon.svg" alt="" class="cursor-pointer mx-2" onclick="deleteProject(5)">
                                     </div>

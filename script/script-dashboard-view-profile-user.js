@@ -1,6 +1,7 @@
 //Elementos del DOM
 const buttonUpdateProject = document.getElementById('hidden-form-update-user');
 const buttonDeleteProjectUser = document.getElementById('hidden-delete-user');
+const buttonDetailProject = document.getElementById('hidden-detail-proyect');
 
 const toggleMenu = (event, menuID) => {
     event.preventDefault();
@@ -43,4 +44,18 @@ const deleteProject = (menuID) => {
 
 const closeDelete = () => {
     buttonDeleteProjectUser.classList.toggle('hidden-delete'); //Alterna la visibilidad del formulario para actualizar el proyecto
+}
+
+//Muestra el formulario para actualizar un proyecto y cierra el menu del usuario
+const viewDetails = (menuID) => {  
+    buttonDetailProject.classList.remove('hidden-detail');
+
+    const menuUser = document.querySelector(`.menu-user[data-menu="${menuID}"]`);
+    if (menuUser) {
+        menuUser.classList.add('hidden-menu-user');
+    }
+} 
+
+const closeDetail = () => {
+    buttonDetailProject.classList.add('hidden-detail'); //Alterna la visibilidad del formulario para actualizar el proyecto
 }
